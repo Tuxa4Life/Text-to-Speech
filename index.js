@@ -1,36 +1,36 @@
-const a = document.querySelector('#a')
-const b = document.querySelector('#b')
-const g = document.querySelector('#g')
-const d = document.querySelector('#d')
-const e = document.querySelector('#e')
-const v = document.querySelector('#v')
-const z = document.querySelector('#z')
-const st = document.querySelector('#t')
-const i = document.querySelector('#i')
-const k = document.querySelector('#k')
-const l = document.querySelector('#l')
-const m = document.querySelector('#m')
-const n = document.querySelector('#n')
-const o = document.querySelector('#o')
-const p = document.querySelector('#p')
-const sj = document.querySelector('#sj')
-const r = document.querySelector('#r')
-const s = document.querySelector('#s')
-const t = document.querySelector('#t')
-const u = document.querySelector('#u')
-const f = document.querySelector('#f')
-const q = document.querySelector('#q')
-const sr = document.querySelector('#sr')
-const y = document.querySelector('#y')
-const sh = document.querySelector('#sh')
-const ch = document.querySelector('#ch')
-const c = document.querySelector('#c')
-const dz = document.querySelector('#dz')
-const w = document.querySelector('#w')
-const sw = document.querySelector('#sw')
-const x = document.querySelector('#x')
-const j = document.querySelector('#j')
-const h = document.querySelector('#h')
+const a = new Audio('assets/Audios/a.mp3')
+const b = new Audio('assets/Audios/b.mp3')
+const g = new Audio('assets/Audios/g.mp3')
+const d = new Audio('assets/Audios/d.mp3')
+const e = new Audio('assets/Audios/e.mp3')
+const v = new Audio('assets/Audios/v.mp3')
+const z = new Audio('assets/Audios/z.mp3')
+const st = new Audio('assets/Audios/st.mp3')
+const i = new Audio('assets/Audios/i.mp3')
+const k = new Audio('assets/Audios/k.mp3')
+const l = new Audio('assets/Audios/l.mp3')
+const m = new Audio('assets/Audios/m.mp3')
+const n = new Audio('assets/Audios/n.mp3')
+const o = new Audio('assets/Audios/o.mp3')
+const p = new Audio('assets/Audios/p.mp3')
+const sj = new Audio('assets/Audios/sj.mp3')
+const r = new Audio('assets/Audios/r.mp3')
+const s = new Audio('assets/Audios/s.mp3')
+const t = new Audio('assets/Audios/t.mp3')
+const u = new Audio('assets/Audios/u.mp3')
+const f = new Audio('assets/Audios/f.mp3')
+const q = new Audio('assets/Audios/q.mp3')
+const sr = new Audio('assets/Audios/sr.mp3')
+const y = new Audio('assets/Audios/y.mp3')
+const sh = new Audio('assets/Audios/sh.mp3')
+const ch = new Audio('assets/Audios/ch.mp3')
+const c = new Audio('assets/Audios/c.mp3')
+const dz = new Audio('assets/Audios/dz.mp3')
+const w = new Audio('assets/Audios/w.mp3')
+const sw = new Audio('assets/Audios/sw.mp3')
+const x = new Audio('assets/Audios/x.mp3')
+const j = new Audio('assets/Audios/j.mp3')
+const h = new Audio('assets/Audios/h.mp3')
 
 const input = document.querySelector('#input')
 const btn = document.querySelector('.play-btn')
@@ -75,7 +75,6 @@ let letters = new Map([
 let inputVal = ''
 
 let toArr = (string) => {
-    console.log('hey')
     let arr = []
     for (let i = 0; i < string.length; i++) {
         if (string[i] == 't' && string[i + 1] == 'h') {
@@ -119,14 +118,15 @@ const sleep = (time) => {
 let play = async () => {
     inputVal = input.value.toLowerCase()
     let arr = toArr(inputVal)
-
+    console.log(arr)
+    
     for (let i = 0; i < arr.length; i++) {
         if (letters.get(arr[i]) == ' ') {
             await sleep(200)
             continue
         }
         letters.get(arr[i]).play()
-        console.log(arr[i], letters.get(arr))
+        console.log(arr[i])
         await sleep(100)
     }
 }
