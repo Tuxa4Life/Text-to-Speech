@@ -78,7 +78,36 @@ let toArr = (string) => {
     console.log('hey')
     let arr = []
     for (let i = 0; i < string.length; i++) {
-        arr.push(string[i].toLowerCase())
+        if (string[i] == 't' && string[i + 1] == 'h') {
+            arr.push('st')
+            i += 2
+        }
+        if (string[i] == 's' && string[i + 1] == 'h') {
+            arr.push('sh')
+            i += 2
+        }
+        if (string[i] == 'j' && string[i + 1] == 'h') {
+            arr.push('sj')
+            i += 2
+        }
+        if (string[i] == 'g' && string[i + 1] == 'h') {
+            arr.push('sr')
+            i += 2
+        }
+        if (string[i] == 'c' && string[i + 1] == 'h') {
+            arr.push('ch')
+            i += 2
+        }
+        if (string[i] == 'd' && string[i + 1] == 'z') {
+            arr.push('dz')
+            i += 2
+        }
+        if (string[i] == 'w' && string[i + 1] == 'h') {
+            arr.push('sw')
+            i += 2
+        }
+
+        arr.push(string[i])
     }
     return arr
 }
@@ -88,9 +117,9 @@ const sleep = (time) => {
 }
 
 let play = async () => {
-    inputVal = input.value
+    inputVal = input.value.toLowerCase()
     let arr = toArr(inputVal)
-    console.log('hey')
+
     for (let i = 0; i < arr.length; i++) {
         if (letters.get(arr[i]) == ' ') {
             await sleep(200)
