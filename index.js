@@ -69,7 +69,40 @@ let letters = new Map([
     ['x', x],
     ['j', j],
     ['h', h],
-    [' ', ' ']
+    [' ', ' '],
+    ['ა', a],
+    ['ბ', b],
+    ['გ', g],
+    ['დ', d],
+    ['ე', e],
+    ['ვ', v],
+    ['ზ', z],
+    ['თ', st],
+    ['ი', i],
+    ['კ', k],
+    ['ლ', l],
+    ['მ', m],
+    ['ნ', n],
+    ['ო', o],
+    ['პ', p],
+    ['ჟ', sj],
+    ['რ', r],
+    ['ს', s],
+    ['ტ', t],
+    ['უ', u],
+    ['ფ', f],
+    ['ქ', q],
+    ['ღ', sr],
+    ['ყ', y],
+    ['შ', sh],
+    ['ჩ', ch],
+    ['ც', c],
+    ['ძ', dz],
+    ['წ', w],
+    ['ჭ', sw],
+    ['ხ', x],
+    ['ჯ', j],
+    ['ჰ', h],
 ])
 
 let inputVal = ''
@@ -119,7 +152,7 @@ let play = async () => {
     inputVal = input.value.toLowerCase()
     let arr = toArr(inputVal)
     console.log(arr)
-    
+
     for (let i = 0; i < arr.length; i++) {
         if (letters.get(arr[i]) == ' ') {
             await sleep(200)
