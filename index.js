@@ -1,108 +1,50 @@
-const a = new Audio('assets/Audios/a.mp3')
-const b = new Audio('assets/Audios/b.mp3')
-const g = new Audio('assets/Audios/g.mp3')
-const d = new Audio('assets/Audios/d.mp3')
-const e = new Audio('assets/Audios/e.mp3')
-const v = new Audio('assets/Audios/v.mp3')
-const z = new Audio('assets/Audios/z.mp3')
-const st = new Audio('assets/Audios/st.mp3')
-const i = new Audio('assets/Audios/i.mp3')
-const k = new Audio('assets/Audios/k.mp3')
-const l = new Audio('assets/Audios/l.mp3')
-const m = new Audio('assets/Audios/m.mp3')
-const n = new Audio('assets/Audios/n.mp3')
-const o = new Audio('assets/Audios/o.mp3')
-const p = new Audio('assets/Audios/p.mp3')
-const sj = new Audio('assets/Audios/sj.mp3')
-const r = new Audio('assets/Audios/r.mp3')
-const s = new Audio('assets/Audios/s.mp3')
-const t = new Audio('assets/Audios/t.mp3')
-const u = new Audio('assets/Audios/u.mp3')
-const f = new Audio('assets/Audios/f.mp3')
-const q = new Audio('assets/Audios/q.mp3')
-const sr = new Audio('assets/Audios/sr.mp3')
-const y = new Audio('assets/Audios/y.mp3')
-const sh = new Audio('assets/Audios/sh.mp3')
-const ch = new Audio('assets/Audios/ch.mp3')
-const c = new Audio('assets/Audios/c.mp3')
-const dz = new Audio('assets/Audios/dz.mp3')
-const w = new Audio('assets/Audios/w.mp3')
-const sw = new Audio('assets/Audios/sw.mp3')
-const x = new Audio('assets/Audios/x.mp3')
-const j = new Audio('assets/Audios/j.mp3')
-const h = new Audio('assets/Audios/h.mp3')
+const audios = {
+    a: new Audio('assets/Audios/a.mp3'), b: new Audio('assets/Audios/b.mp3'),
+    g: new Audio('assets/Audios/g.mp3'), d: new Audio('assets/Audios/d.mp3'),
+    e: new Audio('assets/Audios/e.mp3'), v: new Audio('assets/Audios/v.mp3'),
+    z: new Audio('assets/Audios/z.mp3'), st: new Audio('assets/Audios/st.mp3'),
+    i: new Audio('assets/Audios/i.mp3'), k: new Audio('assets/Audios/k.mp3'),
+    l: new Audio('assets/Audios/l.mp3'), m: new Audio('assets/Audios/m.mp3'),
+    n: new Audio('assets/Audios/n.mp3'), o: new Audio('assets/Audios/o.mp3'),
+    p: new Audio('assets/Audios/p.mp3'), sj: new Audio('assets/Audios/sj.mp3'),
+    r: new Audio('assets/Audios/r.mp3'), s: new Audio('assets/Audios/s.mp3'),
+    t: new Audio('assets/Audios/t.mp3'), u: new Audio('assets/Audios/u.mp3'),
+    f: new Audio('assets/Audios/f.mp3'), q: new Audio('assets/Audios/q.mp3'),
+    sr: new Audio('assets/Audios/sr.mp3'), y: new Audio('assets/Audios/y.mp3'),
+    sh: new Audio('assets/Audios/sh.mp3'), ch: new Audio('assets/Audios/ch.mp3'),
+    c: new Audio('assets/Audios/c.mp3'), dz: new Audio('assets/Audios/dz.mp3'),
+    w: new Audio('assets/Audios/w.mp3'), sw: new Audio('assets/Audios/sw.mp3'),
+    x: new Audio('assets/Audios/x.mp3'), j: new Audio('assets/Audios/j.mp3'),
+    h: new Audio('assets/Audios/h.mp3'), 
+}
 
 const input = document.querySelector('#input')
 const btn = document.querySelector('.play-btn')
 
 let letters = new Map([
-    ['a', a],
-    ['b', b],
-    ['g', g],
-    ['d', d],
-    ['e', e],
-    ['v', v],
-    ['z', z],
-    ['st', st],
-    ['i', i],
-    ['k', k],
-    ['l', l],
-    ['m', m],
-    ['n', n],
-    ['o', o],
-    ['p', p],
-    ['sj', sj],
-    ['r', r],
-    ['s', s],
-    ['t', t],
-    ['u', u],
-    ['f', f],
-    ['q', q],
-    ['sr', sr],
-    ['y', y],
-    ['sh', sh],
-    ['ch', ch],
-    ['c', c],
-    ['dz', dz],
-    ['w', w],
-    ['sw', sw],
-    ['x', x],
-    ['j', j],
-    ['h', h],
-    [' ', ' '],
-    ['ა', a],
-    ['ბ', b],
-    ['გ', g],
-    ['დ', d],
-    ['ე', e],
-    ['ვ', v],
-    ['ზ', z],
-    ['თ', st],
-    ['ი', i],
-    ['კ', k],
-    ['ლ', l],
-    ['მ', m],
-    ['ნ', n],
-    ['ო', o],
-    ['პ', p],
-    ['ჟ', sj],
-    ['რ', r],
-    ['ს', s],
-    ['ტ', t],
-    ['უ', u],
-    ['ფ', f],
-    ['ქ', q],
-    ['ღ', sr],
-    ['ყ', y],
-    ['შ', sh],
-    ['ჩ', ch],
-    ['ც', c],
-    ['ძ', dz],
-    ['წ', w],
-    ['ჭ', sw],
-    ['ხ', x],
-    ['ჯ', j],
-    ['ჰ', h],
+    ['a', audios.a], ['b', audios.b], ['g', audios.g],
+    ['d', audios.d], ['e', audios.e], ['v', audios.v],
+    ['z', audios.z], ['st', audios.st], ['i', audios.i],
+    ['k', audios.k], ['l', audios.l], ['m', audios.m],
+    ['n', audios.n], ['o', audios.o], ['p', audios.p],
+    ['sj', audios.sj], ['r', audios.r], ['s', audios.s],
+    ['t', audios.t], ['u', audios.u], ['f', audios.f],
+    ['q', audios.q], ['sr', audios.sr], ['y', audios.y],
+    ['sh', audios.sh], ['ch', audios.ch], ['c', audios.c],
+    ['dz', audios.dz], ['w', audios.w], ['sw', audios.sw],
+    ['x', audios.x], ['j', audios.j], ['h', audios.h],
+    [' ', ' '], ['ა', audios.a], ['ბ', audios.b],
+    ['გ', audios.g], ['დ', audios.d], ['ე', audios.e],
+    ['ვ', audios.v], ['ზ', audios.z], ['თ', audios.st],
+    ['ი', audios.i], ['კ', audios.k], ['ლ', audios.l],
+    ['მ', audios.m],['ნ', audios.n],['ო', audios.o],
+    ['პ', audios.p],['ჟ', audios.sj],['რ', audios.r],
+    ['ს', audios.s],['ტ', audios.t],['უ', audios.u],
+    ['ფ', audios.f],['ქ', audios.q],['ღ', audios.sr],
+    ['ყ', audios.y],['შ', audios.sh],['ჩ', audios.ch],
+    ['ც', audios.c],['ძ', audios.dz],['წ', audios.w],
+    ['ჭ', audios.sw],['ხ', audios.x],['ჯ', audios.j],
+    ['ჰ', audios.h],
 ])
 
 let inputVal = ''
